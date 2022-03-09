@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
+    <!--     p5-arduino -->
+    <script
+      language="javascript"
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/p5.serialserver@0.0.28/lib/p5.serialport.js"
+    ></script>
+    <!--     ml5 -->
+    <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+    <!--     chart -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.2/chart.min.js"
+      integrity="sha512-tMabqarPtykgDtdtSqCL3uLVM0gS1ZkUAVhRFu1vSEFgvB73niFQWJuvviDyBGBH22Lcau4rHB5p2K2T0Xvr6Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta charset="utf-8" />
+
+    <!--     textstyle -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&amp;family=Yuji+Syuku&amp;display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-------------  instruction ----->
+    <div id="instructions">
+      <h1 id="title">Finger Spray</h1>
+      <p id="caption">
+        Wield your hand and paint through the air. Grip or release, tell the
+        truth of yourself.
+      </p>
+    </div>
+    <!------------- chart ---------->
+    <div id="report">
+      <div class="chartRow">
+        <div class="col2">
+          <div class="chartTitle">Squeeze Time :</div>
+          <canvas id="squeezeTimeChart" class="roundChart"></canvas>
+        </div>
+        <div class="col2">
+          <div class="chartTitle">Painted Area :</div>
+          <canvas id="blankAreaChart" class="roundChart"></canvas>
+        </div>
+      </div>
+      <div class="chartRow">
+        <div class="chartTitle">During The Process :</div>
+      </div>
+      <div class="chartRow">
+        <div class="col3">
+          <canvas id="hueProChart" class="roundChart"></canvas>
+        </div>
+        <div class="col3">
+          <canvas id="wcProChart" class="roundChart"></canvas>
+        </div>
+        <div class="col3">
+          <canvas id="brProChart" class="roundChart"></canvas>
+        </div>
+      </div>
+      <div class="chartRow">
+        <div class="chartTitle">Final Image Analysis :</div>
+      </div>
+      <div class="chartRow">
+        <div class="col3">
+          <canvas id="hueFinChart" class="roundChart"></canvas>
+        </div>
+        <div class="col3">
+          <canvas id="wcFinChart" class="roundChart"></canvas>
+        </div>
+        <div class="col3">
+          <canvas id="brFinChart" class="roundChart"></canvas>
+        </div>
+      </div>
+      <div class="chartRow">
+        <canvas id="lineGraph"></canvas>
+      </div>
+    </div>
+    <script src="sketch.js"></script>
+    <script src="report.js"></script>
+    <script src="instruction.js"></script>
+    <!--     <script src="select_cam.js"></script> -->
+  </body>
+</html>
